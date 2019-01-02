@@ -42,7 +42,7 @@ export const insertClickToCallButton = [
   ///*
   {
     // must match page url
-    urlCheck: href => {
+    shouldAct: href => {
       return /\/person\/\d+/.test(href)
     },
 
@@ -88,7 +88,7 @@ export const hoverShowClickToCallButton = [
   //config example
   {
     // must match url
-    urlCheck: href => {
+    shouldAct: href => {
       return /\/persons\/list\/user\/\d+/.test(href)
     },
 
@@ -118,7 +118,7 @@ export const hoverShowClickToCallButton = [
 export const phoneNumberSelectors = [
   ///* example config
   {
-    urlCheck: (href) => {
+    shouldAct: (href) => {
       return /\/person\/\d+/.test(href)
     },
     selector: '[data-test="phone-label"]'
@@ -294,18 +294,4 @@ export async function initThirdParty() {
   if (window.rc.userAuthed) {
     notifyRCAuthed()
   }
-}
-
-/**
- * for background.js, check current tab is extension target tab or not
- * @param {object} tab
- */
-export function checkTab(tab) {
-  return /https:\/\/.+\.pipedrive.com\/.+/.test(tab.url)
-  /** url check examples
-    tab.url.startsWith('https://app.hubspot.com') &&
-    !tab.url.startsWith('https://app.hubspot.com/login') &&
-    !tab.url.startsWith('https://app.hubspot.com/myaccounts-beta') &&
-    !tab.url.startsWith('https://app.hubspot.com/developer')
-   */
 }
