@@ -62,7 +62,7 @@ function formatData(data) {
         return {
           phoneNumber: p.value,
           primary: p.primary,
-          phoneType: p.label
+          phoneType: 'direct'
         }
       }),
       org_id,

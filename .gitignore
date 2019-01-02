@@ -13,6 +13,7 @@
 /dist/images/
 package-lock.json
 /config.js
+/dist/*.html
 
 *.crx
 *.pem
